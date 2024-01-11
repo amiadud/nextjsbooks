@@ -16,10 +16,19 @@ const Allbook = () => {
     },[])
 
 
+    const handleFilter = ()=> {
+        const reamings = allbooks.filter(data => data.qBooks > 0 )
+        setAllbooks(reamings);
+    }
+
     return (
         <div>
+
+        <div className='flex justify-center mt-6'>
+        <button onClick={handleFilter} className='btn btn-accent dark:text-black dark:bg-green-300 dark:outline-none dark:border-none'>Filter (Available books)</button>
+        </div>
+
              <div className='grid grid-cols-1 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
-        
         {
             allbooks.map(books => 
                 <div className='border hover:shadow-none shadow-md rounded-md mt-4  '>

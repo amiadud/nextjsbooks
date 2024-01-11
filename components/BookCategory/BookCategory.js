@@ -7,7 +7,7 @@ const BookCategory = () => {
     const [CategoryData, setCategoryData] = useState([])
 
     useEffect( ()=> {
-        fetch('/api/book-category', {
+        fetch('/api/book-category?', {
         })
         .then(res => res.json())
         .then(data => setCategoryData(data))
